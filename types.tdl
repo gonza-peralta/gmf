@@ -1,0 +1,178 @@
+expression := *top* &
+ [ HEAD pos,
+   VAL val-cat ].
+
+word := expression &
+ [ ORTH string ].
+
+;;; Lexical values
+;;; ==============
+
+;;; Lexical det
+;;; ===========
+lexical-det := word &
+[ HEAD det,
+  VAL [ SPR <>,
+        COMPS <> ] ].
+
+sg-ter-ma-det := lexical-det &
+[ HEAD [ AGR [ NUM sg,
+               PER ter,
+               GEN ma ] ] ].
+
+pl-ter-ma-det := lexical-det &
+[ HEAD [ AGR [ NUM pl,
+               PER ter,
+               GEN ma ] ] ].
+
+sg-ter-fe-det := lexical-det &
+[ HEAD [ AGR [ NUM sg,
+               PER ter,
+               GEN fe ] ] ].
+
+pl-ter-fe-det := lexical-det &
+[ HEAD [ AGR [ NUM pl,
+               PER ter,
+               GEN fe ] ] ].
+
+
+;;; Lexical noun
+;;; ============
+lexical-noun := word &
+[ HEAD noun & [ AGR [ NUM #agrnum,
+                      GEN #agrgen] ],
+  VAL [ SPR < [ HEAD det & [ AGR [ NUM #agrnum,
+                                   GEN #agrgen] ] ] >,
+        COMPS <> ] ].
+
+noun-pl := lexical-noun &
+[ HEAD.AGR.NUM pl].
+
+noun-sg := lexical-noun &
+[ HEAD.AGR.NUM sg].
+
+noun-pl-ma := noun-pl &
+[ HEAD.AGR.GEN ma].
+
+noun-pl-fe := noun-pl &
+[ HEAD.AGR.GEN fe].
+
+noun-sg-ma := noun-sg &
+[ HEAD.AGR.GEN ma].
+
+noun-sg-fe := noun-sg &
+[ HEAD.AGR.GEN fe].
+
+;;; Lexical verb
+;;; ============
+lexical-verb := word & 
+[ HEAD verb & [ AGR [ NUM #agrnum,
+                      PER #agrper ] ],
+  VAL [ SPR < [ HEAD noun & [ AGR [ NUM #agrnum,
+                                    PER #agrper ] ] ] > ] ].
+
+;;; Lexical prep
+;;; ============
+lexical-prep := word &
+[ HEAD prep,
+  VAL [ SPR <>,
+        COMPS < phrase & [HEAD noun, 
+                          VAL [ SPR <> ] ] > ] ].
+
+;;; Lexical conjunction
+;;; ===================
+lexical-conj := word &
+[ HEAD conj,
+  VAL [ SPR <>,
+        COMPS <phrase-np, phrase-np>] ].
+
+;;; PHRASE DEFINITION
+;;; =================
+
+phrase := expression &
+ [ ARGS *list* ].
+
+phrase-np := phrase & 
+ [ HEAD noun,
+   VAL [ SPR <>, COMPS <> ] ]. 
+
+phrase-vp := phrase & 
+ [ HEAD verb, 
+   VAL [ SPR < [] >, COMPS <> ] ].
+
+phrase-pp := phrase & 
+ [ HEAD prep, 
+   VAL [ SPR <>, COMPS <> ] ].
+
+
+;;; POS tagging
+;;; ===========
+pos := *top*.
+prep := pos.
+adv := pos.
+conj := pos.
+
+agr-pos := pos &
+ [ AGR agr-cat ].
+
+
+agr-pos-p := agr-pos &
+ [ AGR agr-cat-p ].
+
+verb := agr-pos-p.
+
+agr-pos-pg := agr-pos &
+ [ AGR agr-cat-pg ].
+
+noun := agr-pos-pg.
+det := agr-pos-pg.
+
+agr-pos-g := agr-pos &
+ [ AGR agr-cat-g ].
+
+adj := agr-pos-g.
+
+;;; Agreement
+;;; =========
+
+agr-cat := *top* &
+ [ NUM num-cat ].
+
+agr-cat-p := agr-cat &
+ [ PER per-cat ].
+
+agr-cat-g := agr-cat &
+ [ GEN gen-cat ].
+
+agr-cat-pg := agr-cat-p & agr-cat-g.
+
+num-cat := *top*.
+sg := num-cat.
+pl := num-cat.
+
+per-cat := *top*.
+pri := per-cat.
+seg := per-cat.
+ter := per-cat.
+
+gen-cat := *top*.
+ma := gen-cat.
+fe := gen-cat.
+
+val-cat := *top* &
+ [ SPR *list*,
+   COMPS *list* ].
+
+
+;;; standard types
+;;; ==============
+string := *top*.
+
+*list* := *top*.
+
+*ne-list* := *list* &
+ [ FIRST *top*,
+   REST *list* ].
+
+*null* := *list*.
+

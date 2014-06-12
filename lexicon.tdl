@@ -1,0 +1,42 @@
+El := sg-ter-ma-det &
+[ ORTH "El" ].
+
+estudiante := noun-sg &
+[ ORTH "estudiante" ].
+
+estudiantes := noun-pl &
+[ ORTH "estudiantes"].
+
+entrega := lexical-verb &
+[ VAL [ COMPS < phrase-np, phrase-pp > ],
+  ORTH "entrega" ].
+
+;;;retiran := lexical-verb &
+;;;[ ]
+
+los := pl-ter-ma-det &
+[ ORTH "los" ].
+
+libros := noun-pl-ma & 
+[ ORTH "libros" ].
+
+libro := noun-sg-ma &
+[ ORTH "libro"].
+
+a := lexical-prep &
+[ ORTH "a" ].
+
+la := sg-ter-fe-det &
+[ ORTH "la" ].
+
+biblioteca := noun-sg-fe &
+[ ORTH "biblioteca" ].
+
+bibliotecaria := noun-sg-fe &
+[ ORTH "bibliotecaria" ].
+
+comprobante := noun-sg-ma &
+[ ORTH "comprobante"].
+
+y := lexical-conj &
+[ ORTH "y"]. 

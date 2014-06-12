@@ -1,0 +1,7 @@
+ok :  [El estudiante] [entrega [los libros] [a la biblioteca]]
+mal:  [El estudiante] [entrega [[los libros] [a la biblioteca]] ]
+
+los libros: 
+NP PP no se pueden combinar
+VP y PP si. 
+

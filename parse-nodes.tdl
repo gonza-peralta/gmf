@@ -1,0 +1,25 @@
+S := phrase & [ HEAD verb, 
+                VAL [ SPR <>, 
+                      COMPS <> ] ].
+
+VP := phrase & [ HEAD verb, 
+                 VAL [ SPR < [] >, 
+                       COMPS <> ] ].
+
+V := [ HEAD verb ].
+
+NP := phrase & [ HEAD noun, 
+                 VAL [ SPR <>, COMPS <> ] ].
+
+N := [ HEAD noun, 
+       VAL [ SPR < [] > ] ].
+
+DET := [ HEAD det ].
+
+PP := phrase & [ HEAD prep, 
+                 VAL [ SPR <>, 
+                       COMPS <> ] ].
+
+P := [ HEAD prep ].
+
+Conj := [HEAD conj].

@@ -1,0 +1,6 @@
+;;; Start structure
+
+start := phrase &
+[ HEAD verb,
+  VAL [ SPR <>,
+        COMPS <> ] ].
