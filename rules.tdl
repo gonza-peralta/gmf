@@ -7,7 +7,7 @@ head-specifier-rule := phrase &
          [ HEAD #head,
            VAL [ SPR < #nonhd >,
                  COMPS #comps ] ] > ].
- 
+
 head-complement-rule-1 := phrase &
 [ HEAD #head,
   VAL [ SPR #spr, 
@@ -15,8 +15,8 @@ head-complement-rule-1 := phrase &
   ARGS < word & 
          [ HEAD #head,
            VAL [ SPR #spr, 
-                 COMPS < #nonhddtr > ] ],  
-         #nonhddtr >  ].
+                 COMPS < #1 > ] ],  
+         #1 >  ].
 
 head-complement-rule-2 := phrase &
 [ HEAD #head,
@@ -25,32 +25,30 @@ head-complement-rule-2 := phrase &
   ARGS < word & 
          [ HEAD #head,
            VAL [ SPR #spr, 
-                 COMPS < #c1, #c2 > ] ],  
-         #c1, #c2 >  ].
-
-;;;head-modifier-rule := phrase &
-;;;[ HEAD #head,
-;;;  VAL [ SPR #spr,
-;;;        COMPS #comps ],
-;;;  ARGS < phrase &
-;;;         [ HEAD #head,
-;;;           VAL [ SPR #spr,
-;;;                 COMPS #comps ] ],
-;;;         phrase & [ HEAD prep, 
-;;;                 VAL [ SPR <>, 
-;;;                       COMPS <> ] ] > ].
+                 COMPS < #1, #2 > ] ],
+         #1, #2 >  ].
 
 head-modifier-rule := phrase &
 [ HEAD #head,
   VAL [ SPR #spr,
         COMPS <> ],
-  ARGS < phrase &
+  ARGS < phrase & 
          [ HEAD #head,
            VAL [ SPR #spr,
                  COMPS <> ] ],
-         phrase & [ HEAD prep, 
-                 VAL [ SPR <>, 
-                       COMPS <> ] ] > ].
+         phrase-pp > ].
+
+;;;head-modifier-rule := phrase &
+;;;[ HEAD #head,
+;;;  VAL [ SPR #spr,
+;;;        COMPS <> ],
+;;;  ARGS < phrase &
+;;;         [ HEAD #head,
+;;;           VAL [ SPR #spr,
+;;;                 COMPS <> ] ],
+;;;         phrase & [ HEAD prep, 
+;;;                 VAL [ SPR <>, 
+;;;                       COMPS <> ] ] > ].
 
 head-conjunction-rule := phrase &
 [ HEAD #head,

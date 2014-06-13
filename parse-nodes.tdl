@@ -22,4 +22,8 @@ PP := phrase & [ HEAD prep,
 
 P := [ HEAD prep ].
 
-Conj := [HEAD conj].
+Conj := [HEAD conj ].
+
+Adv := [ HEAD adv ].
+
+Adj := [ HEAD adj ].

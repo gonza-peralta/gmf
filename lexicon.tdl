@@ -7,24 +7,45 @@ estudiante := noun-sg &
 estudiantes := noun-pl &
 [ ORTH "estudiantes"].
 
-entrega := lexical-verb &
-[ VAL [ COMPS < phrase-np, phrase-pp > ],
-  ORTH "entrega" ].
+gramatica := lexical-nomprop &
+[ ORTH "gramatica"]. 
 
-;;;retiran := lexical-verb &
-;;;[ ]
+;;;entrega := transitive-verb &
+;;;[ VAL [ COMPS < phrase-np >,
+;;;        MOD < phrase-pp > ],
+;;;  ORTH "entrega" ].
+entrega := ditranspp-verb &
+[ ORTH "entrega"].
+
+;;;retiran := transitive-verb &
+;;;[  VAL [ COMPS < phrase-np >,
+;;;         MOD < phrase-pp> ], 
+;;;   ORTH "retiran" ].
+retiran := ditranspp-verb &
+[ ORTH "retiran" ].
+
 
 los := pl-ter-ma-det &
 [ ORTH "los" ].
 
+las := pl-ter-fe-det &
+[ ORTH "las" ]. 
+
 libros := noun-pl-ma & 
 [ ORTH "libros" ].
+
+;;;libros := noun-pl-ma &
+;;;[ VAL [ MOD < phrase-pp >]
+;;;  ORTH "libros"].
 
 libro := noun-sg-ma &
 [ ORTH "libro"].
 
 a := lexical-prep &
 [ ORTH "a" ].
+
+de := lexical-prep &
+[ ORTH "de" ].
 
 la := sg-ter-fe-det &
 [ ORTH "la" ].
