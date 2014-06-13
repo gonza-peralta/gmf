@@ -32,7 +32,7 @@ head-modifier-rule := phrase &
 [ HEAD #head,
   VAL [ SPR #spr,
         COMPS <> ],
-  ARGS < phrase & 
+  ARGS < expression & 
          [ HEAD #head,
            VAL [ SPR #spr,
                  COMPS <> ] ],
