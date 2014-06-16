@@ -27,6 +27,12 @@ entrega := ditranspp-verb &
 retiran := ditranspp-verb &
 [ ORTH "retiran" ].
 
+entregado := passintransitive-verb-sg-ma &
+[ ORTH "entregado"].
+
+es :=  &
+[ ]
+
 comparten := transitive-verb &
 [ ORTH "comparten"].
 

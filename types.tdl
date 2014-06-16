@@ -170,11 +170,59 @@ ditranspp-verb := lexical-verb &
                 phrase & [ HEAD prep,
                          VAL [ SPR <> ] ] > ] ].
 
-pintransitive-verb := lexical-verb &
+ditranspp-verb-pl := ditranspp-verb &
+[ HEAD.AGR.NUM pl]. 
+ditranspp-verb-pl-ma := ditranspp-verb-pl &
+[ HEAD.AGR.GEN ma].
+ditranspp-verb-pl-fe := ditranspp-verb-pl &
+[ HEAD.AGR.GEN fe].
+
+ditranspp-verb-sg := ditranspp-verb &
+[ HEAD.AGR.NUM sg].
+ditranspp-verb-sg-ma := ditranspp-verb-sg &
+[ HEAD.AGR.GEN ma].
+ditranspp-verb-sg-fe := ditranspp-verb-sg &
+[ HEAD.AGR.GEN fe].
+
+
+
+passintransitive-verb := lexical-verb &
 [ VAL [ COMPS < phrase & [ HEAD prep,
-			   VAL [ SPR <> ] ] > ] ].
+			             VAL [ SPR <> ] ] > ] ].
+
+passintransitive-verb-pl := passintransitive-verb &
+[ HEAD.AGR.NUM pl].
+passintransitive-verb-pl-ma := passintransitive-verb-pl &
+[ HEAD.AGR.GEN ma].
+passintransitive-verb-pl-fe := passintransitive-verb-pl &
+[ HEAD.AGR.GEN fe].
+
+passintransitive-verb-sg := passintransitive-verb &
+[ HEAD.AGR.NUM sg].
+passintransitive-verb-sg-ma := passintransitive-verb-sg &
+[ HEAD.AGR.GEN ma].
+passintransitive-verb-sg-fe := passintransitive-verb-sg &
+[ HEAD.AGR.GEN fe].
 
 
+passbe-verb := lexical-verb &
+[ VAL [ COMPS < phrase & [ HEAD verb, 
+                         VAL [ COMPS <> ] ] > ] ].
+
+passbe-verb-pl := passbe-verb &
+[ HEAD.AGR.NUM pl].
+passbe-verb-pl-ma := passbe-verb-pl &
+[ HEAD.AGR.GEN ma].
+passbe-verb-pl-fe := passbe-verb-pl &
+[ HEAD.AGR.GEN fe].
+
+passbe-verb-sg := passbe-verb &
+[ HEAD.AGR.NUM.sg].
+passbe-verb-sg-ma := passbe-verb-sg &
+[ HEAD.AGR.GEN ma].
+passbe-verb-sg-fe := passbe-verb-sg &
+[ HEAD.AGR.GEN fe].
+                         
 ;;; Lexical prep
 ;;; ============
 lexical-prep := word &
