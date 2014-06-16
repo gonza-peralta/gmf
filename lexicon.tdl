@@ -7,8 +7,11 @@ estudiante := noun-sg &
 estudiantes := noun-pl &
 [ ORTH "estudiantes"].
 
-gramatica := lexical-nomprop &
-[ ORTH "gramatica"]. 
+profesores := noun-pl-ma &
+[ ORTH "profesores"].
+
+gramática := lexical-nomprop &
+[ ORTH "gramática"]. 
 
 ;;;entrega := transitive-verb &
 ;;;[ VAL [ COMPS < phrase-np >,
@@ -24,6 +27,8 @@ entrega := ditranspp-verb &
 retiran := ditranspp-verb &
 [ ORTH "retiran" ].
 
+comparten := transitive-verb &
+[ ORTH "comparten"].
 
 los := pl-ter-ma-det &
 [ ORTH "los" ].
@@ -60,4 +65,11 @@ comprobante := noun-sg-ma &
 [ ORTH "comprobante"].
 
 y := lexical-conj &
-[ ORTH "y"]. 
+[ ORTH "y"].
+
+frecuentemente := lexical-adv &
+[ ORTH "frecuentemente"].
+
+importantes := lexical-adj-pl &
+[ ORTH "importantes"].
+ 

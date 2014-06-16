@@ -185,8 +185,39 @@ lexical-conj := word &
   VAL [ SPR <>,
         COMPS <phrase-np, phrase-np>] ].
 
+;;; Lexical adv
+;;; ===========
+lexical-adv := word &
+[ HEAD adv, 
+  VAL [ MOD < expression & [ HEAD verb ] > ] ].
 
-;;; standard types
+;;; Lexical adj
+;;; ===========
+lexical-adj := word &
+[ HEAD adj, 
+  VAL [ MOD < expression & [ HEAD noun ] > ] ].
+
+lexical-adj-pl := lexical-adj &
+[ VAL.MOD.FIRST.HEAD.AGR.NUM pl].
+
+lexical-adj-pl-ma := lexical-adj-pl &
+[ VAL.MOD.FIRST.HEAD.AGR.GEN ma].
+
+lexical-adj-pl-fe := lexical-adj-pl &
+[ VAL.MOD.FIRST.HEAD.AGR.GEN fe].
+
+lexical-adj-sg := lexical-adj &
+[ VAL.MOD.FIRST.HEAD.AGR.NUM sg].
+
+lexical-adj-sg-ma := lexical-adj-sg &
+[ VAL.MOD.FIRST.HEAD.AGR.GEN ma].
+
+lexical-adj-sg-fe := lexical-adj-sg &
+[ VAL.MOD.FIRST.HEAD.AGR.GEN fe].
+
+
+
+;; standard types
 ;;; ==============
 string := *top*.
 

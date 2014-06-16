@@ -28,39 +28,39 @@ head-complement-rule-2 := phrase &
                  COMPS < #1, #2 > ] ],
          #1, #2 >  ].
 
-head-modifier-rule := phrase &
+head-modifier-rule-1 := phrase &
 [ HEAD #head,
-  VAL [ SPR #spr,
+  VAL [ SPR <#spr>,
         COMPS <> ],
-  ARGS < expression & 
+  ARGS < word & 
          [ HEAD #head,
-           VAL [ SPR #spr,
+           VAL [ SPR <#spr>,
                  COMPS <> ] ],
          phrase-pp > ].
 
-;;;head-modifier-rule := phrase &
-;;;[ HEAD #head,
-;;;  VAL [ SPR #spr,
-;;;        COMPS <> ],
-;;;  ARGS < phrase &
-;;;         [ HEAD #head,
-;;;           VAL [ SPR #spr,
-;;;                 COMPS <> ] ],
-;;;         phrase & [ HEAD prep, 
-;;;                 VAL [ SPR <>, 
-;;;                       COMPS <> ] ] > ].
+head-modifier-rule-2 := phrase &
+[ HEAD #head,
+  VAL [ SPR #spr,
+        COMPS #comps ],
+  ARGS < expression & #hdtr &
+          [ HEAD #head,
+            VAL [ SPR #spr,
+                  COMPS #comps ] ],
+         word & 
+          [ VAL [MOD < #hdtr > ] ] > ].
 
 head-conjunction-rule := phrase &
 [ HEAD #head,
   VAL #val,
-  ARGS < #phrase2 &
+  ARGS < #phrase1 &
             [ HEAD #head,
               VAL #val ],
          word & 
          [ HEAD conj,
            VAL [ SPR <>,
                  COMPS <#phrase1, #phrase2> ] ],
-         #phrase1 & 
+         #phrase2 & 
             [ HEAD #head,
               VAL #val ] > ].
+
 

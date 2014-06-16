@@ -14,6 +14,9 @@ NP := phrase & [ HEAD noun,
 N := [ HEAD noun, 
        VAL [ SPR < [] > ] ].
 
+NProp := [ HEAD noun,
+           VAL [ SPR <> ] ].
+
 DET := [ HEAD det ].
 
 PP := phrase & [ HEAD prep, 
