@@ -170,6 +170,11 @@ ditranspp-verb := lexical-verb &
                 phrase & [ HEAD prep,
                          VAL [ SPR <> ] ] > ] ].
 
+pintransitive-verb := lexical-verb &
+[ VAL [ COMPS < phrase & [ HEAD prep,
+			   VAL [ SPR <> ] ] > ] ].
+
+
 ;;; Lexical prep
 ;;; ============
 lexical-prep := word &
@@ -189,32 +194,33 @@ lexical-conj := word &
 ;;; ===========
 lexical-adv := word &
 [ HEAD adv, 
-  VAL [ MOD < expression & [ HEAD verb ] > ] ].
+  VAL [ MOD < [ HEAD verb ] > ] ].
 
 ;;; Lexical adj
 ;;; ===========
 lexical-adj := word &
-[ HEAD adj, 
-  VAL [ MOD < expression & [ HEAD noun ] > ] ].
+[ HEAD adj & [ AGR [ NUM #agrnum,
+		     GEN #agrgen] ], 
+  VAL [ MOD < [ HEAD noun & [AGR [ NUM #agrnum,
+				   GEN #agrgen ] ] ] > ] ].
 
 lexical-adj-pl := lexical-adj &
-[ VAL.MOD.FIRST.HEAD.AGR.NUM pl].
+[ HEAD.AGR.NUM pl].
 
 lexical-adj-pl-ma := lexical-adj-pl &
-[ VAL.MOD.FIRST.HEAD.AGR.GEN ma].
+[ HEAD.AGR.GEN ma].
 
 lexical-adj-pl-fe := lexical-adj-pl &
-[ VAL.MOD.FIRST.HEAD.AGR.GEN fe].
+[ HEAD.AGR.GEN fe].
 
 lexical-adj-sg := lexical-adj &
-[ VAL.MOD.FIRST.HEAD.AGR.NUM sg].
+[ HEAD.AGR.NUM sg].
 
 lexical-adj-sg-ma := lexical-adj-sg &
-[ VAL.MOD.FIRST.HEAD.AGR.GEN ma].
+[ HEAD.AGR.GEN ma].
 
 lexical-adj-sg-fe := lexical-adj-sg &
-[ VAL.MOD.FIRST.HEAD.AGR.GEN fe].
-
+[ HEAD.AGR.GEN fe].
 
 
 ;; standard types
