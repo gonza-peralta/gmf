@@ -41,12 +41,12 @@ head-modifier-rule-1 := phrase &
 
 head-modifier-rule-adj := phrase &
 [ HEAD #head,
-  VAL [ SPR <>,
-        COMPS #comps ],
+  VAL [ SPR <#spr>,
+        COMPS <> ],
   ARGS < expression &
           [ HEAD #head & [ AGR #agr],
-            VAL [ SPR <>,
-                  COMPS #comps ] ],
+            VAL [ SPR <#spr>,
+                  COMPS <> ] ],
          expression & 
           [ HEAD adj,
 	        VAL [MOD < expression & [ HEAD #head & 
