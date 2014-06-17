@@ -17,7 +17,7 @@ gramática := lexical-nomprop &
 ;;;[ VAL [ COMPS < phrase-np >,
 ;;;        MOD < phrase-pp > ],
 ;;;  ORTH "entrega" ].
-entrega := ditranspp-verb &
+entrega := ditranspp-verb-sg  &
 [ ORTH "entrega"].
 
 ;;;retiran := transitive-verb &
@@ -30,8 +30,8 @@ retiran := ditranspp-verb &
 entregado := passintransitive-verb-sg-ma &
 [ ORTH "entregado"].
 
-es :=  &
-[ ]
+es := passbe-verb-sg &
+[ ORTH "es" ].
 
 comparten := transitive-verb &
 [ ORTH "comparten"].
@@ -55,6 +55,12 @@ libro := noun-sg-ma &
 a := lexical-prep &
 [ ORTH "a" ].
 
+por := lexical-prep &
+[ ORTH "por"].
+
+en := lexical-prep &
+[ ORTH "en"].
+
 de := lexical-prep &
 [ ORTH "de" ].
 
@@ -76,6 +82,12 @@ y := lexical-conj &
 frecuentemente := lexical-adv &
 [ ORTH "frecuentemente"].
 
+recientemente := lexical-adv &
+[ ORTH "recientemente"].
+
 importantes := lexical-adj-pl &
 [ ORTH "importantes"].
+
+perdido := lexical-adj-sg-ma &
+[ ORTH "perdido"].
  

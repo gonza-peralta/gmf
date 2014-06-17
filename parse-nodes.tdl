@@ -30,3 +30,7 @@ Conj := [HEAD conj ].
 Adv := [ HEAD adv ].
 
 Adj := [ HEAD adj ].
+
+GAdv := phrase & [ HEAD adv,
+                   VAL [ SPR <[]>,
+                         COMPS <> ] ].
