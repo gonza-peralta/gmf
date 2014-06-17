@@ -1,4 +1,4 @@
-expression := *top* &
+	expression := *top* &
  [ HEAD pos,
    VAL val-cat ].
 
@@ -158,6 +158,9 @@ transitive-verb := lexical-verb &
 [ VAL [ COMPS < phrase & [ HEAD noun, 
                            VAL [ SPR <> ] ] > ] ].
 
+transitive-verb-pl := transitive-verb &
+[ HEAD.AGR.NUM pl].
+
 ditransnp-verb := lexical-verb &
 [ VAL [ COMPS < phrase & [ HEAD noun,
                             VAL [ SPR <> ] ],
@@ -241,9 +244,9 @@ lexical-conj := word &
 ;;; ===========
 lexical-adv := word &
 [ HEAD adv, 
-  VAL [ MOD < [ HEAD verb ] >,
-        SPR <[]>,
-        COMPS <[]> ] ].
+  VAL [ MOD < expression & [HEAD verb] >,
+	SPR <>,
+	COMPS <> ] ].
 
 ;;; Lexical adj
 ;;; ===========

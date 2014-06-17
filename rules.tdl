@@ -52,17 +52,29 @@ head-modifier-rule-adj := phrase &
 	        VAL [MOD < expression & [ HEAD #head & 
 					   [ AGR #agr ] ] > ] ] > ].
 
+;;;head-modifier-rule-adv := phrase &
+;;;[ HEAD #head,
+;;;  VAL [ SPR #spr,
+;;;        COMPS #comps ],
+;;;  ARGS < expression &
+;;;          [ HEAD #head,
+;;;            VAL [ SPR #spr,
+;;;                  COMPS #comps ] ],
+;;;         expression & 
+;;;          [ HEAD adv,
+;;;	        VAL [ MOD < expression & [ HEAD #head ] > ] ] > ].
+
 head-modifier-rule-adv := phrase &
 [ HEAD #head,
   VAL [ SPR #spr,
         COMPS #comps ],
-  ARGS < expression &
-          [ HEAD #head,
-            VAL [ SPR #spr,
-                  COMPS #comps ] ],
-         expression & 
-          [ HEAD adv,
-	        VAL [ MOD < expression & [ HEAD #head ] > ] ] > ].
+  ARGS < expression & #hdtr &
+         [ HEAD #head,
+           VAL [ SPR #spr,
+                 COMPS #comps ] ],
+         expression &
+	 [ HEAD adv,
+	   VAL [ MOD < #hdtr > ] ] > ].
 
 head-conjunction-rule := phrase &
 [ HEAD #head,

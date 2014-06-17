@@ -13,6 +13,9 @@ profesores := noun-pl-ma &
 gramática := lexical-nomprop &
 [ ORTH "gramática"]. 
 
+matemáticas := lexical-nomprop &
+[ ORTH "matemáticas"].
+
 ;;;entrega := transitive-verb &
 ;;;[ VAL [ COMPS < phrase-np >,
 ;;;        MOD < phrase-pp > ],
@@ -33,8 +36,20 @@ entregado := passintransitive-verb-sg-ma &
 es := passbe-verb-sg &
 [ ORTH "es" ].
 
+son := passbe-verb-pl &
+[ ORTH "son"].
+
 comparten := transitive-verb &
 [ ORTH "comparten"].
+
+invitados := transitive-verb-pl &
+[ ORTH "invitados"].
+
+compartidos := passintransitive-verb-pl-ma &
+[ ORTH "compartidos"].
+
+llegan := transitive-verb &
+[ ORTH "llegan"].
 
 los := pl-ter-ma-det &
 [ ORTH "los" ].
@@ -45,12 +60,18 @@ las := pl-ter-fe-det &
 libros := noun-pl-ma & 
 [ ORTH "libros" ].
 
+noche := noun-sg-fe &
+[ ORTH "noche" ].
+
 ;;;libros := noun-pl-ma &
 ;;;[ VAL [ MOD < phrase-pp >]
 ;;;  ORTH "libros"].
 
 libro := noun-sg-ma &
 [ ORTH "libro"].
+
+conferencia := noun-sg-fe &
+[ ORTH "conferencia"].
 
 a := lexical-prep &
 [ ORTH "a" ].
@@ -90,4 +111,5 @@ importantes := lexical-adj-pl &
 
 perdido := lexical-adj-sg-ma &
 [ ORTH "perdido"].
- 
+
+
