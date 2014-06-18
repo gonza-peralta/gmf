@@ -1,4 +1,4 @@
-	expression := *top* &
+expression := *top* &
  [ HEAD pos,
    VAL val-cat ].
 
