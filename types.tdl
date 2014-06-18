@@ -91,7 +91,8 @@ phrase-pp := phrase &
 lexical-det := word &
 [ HEAD det,
   VAL [ SPR <>,
-        COMPS <> ] ].
+        COMPS <>,
+	MOD <> ] ].
 
 sg-ter-ma-det := lexical-det &
 [ HEAD [ AGR [ NUM sg,
@@ -121,12 +122,14 @@ lexical-noun := word &
                       GEN #agrgen] ],
   VAL [ SPR < [ HEAD det & [ AGR [ NUM #agrnum,
                                    GEN #agrgen] ] ] >,
-        COMPS <> ] ].
+        COMPS <>,
+	MOD <> ] ].
 
 lexical-nomprop := word &
 [ HEAD noun,
   VAL [ SPR <>,
-        COMPS <> ] ].
+        COMPS <>,
+	MOD <> ] ].
 
 noun-pl := lexical-noun &
 [ HEAD.AGR.NUM pl].
@@ -150,7 +153,8 @@ lexical-verb := word &
 [ HEAD verb & [ AGR [ NUM #agrnum,
                       PER #agrper ] ],
   VAL [ SPR < [ HEAD noun & [ AGR [ NUM #agrnum,
-                                    PER #agrper ] ] ] > ] ].
+                                    PER #agrper ] ] ] >,
+	MOD <> ] ].
 
 transitive-verb := lexical-verb &
 [ VAL [ COMPS < phrase-np > ] ].
@@ -179,8 +183,7 @@ ditranspp-verb-sg-fe := ditranspp-verb-sg &
 [ HEAD.AGR.GEN fe].
 
 passintransitive-verb := lexical-verb &
-[ VAL [ COMPS < phrase & [ HEAD prep,
-			             VAL [ SPR <> ] ] > ] ].
+[ VAL [ COMPS < phrase-pp > ] ].
 
 passintransitive-verb-pl := passintransitive-verb &
 [ HEAD.AGR.NUM pl].
@@ -198,8 +201,7 @@ passintransitive-verb-sg-fe := passintransitive-verb-sg &
 
 
 passbe-verb := lexical-verb &
-[ VAL [ COMPS < phrase & [ HEAD verb, 
-                         VAL [ COMPS <> ] ] > ] ].
+[ VAL [ COMPS < phrase-vp > ] ].
 
 passbe-verb-pl := passbe-verb &
 [ HEAD.AGR.NUM pl].
@@ -220,28 +222,33 @@ passbe-verb-sg-fe := passbe-verb-sg &
 lexical-prep := word &
 [ HEAD prep,
   VAL [ SPR <>,
-        COMPS < phrase-np > ] ].
+        COMPS < phrase-np >,
+	MOD <> ] ].
 
 ;;; Lexical conjunction
 ;;; ===================
 lexical-conj := word &
-[ HEAD conj,
+[ HEAD conj, 
   VAL [ SPR <>,
-        COMPS <phrase, phrase>] ].
+        COMPS <>, 
+	MOD <> ] ].
 
 ;;; Lexical adv
 ;;; ===========
 lexical-adv-verb := word &
 [ HEAD adv, 
-  VAL [ MOD < phrase & [HEAD verb,
-                        VAL [ SPR <[]>,
-                              COMPS <> ] ] >,
+  VAL [ MOD < [ HEAD verb,
+                VAL [ SPR <[]>,
+                      COMPS <> ] ] >,
         SPR <>,
         COMPS <> ] ].
 
 lexical-adv-adj := word &
 [ HEAD adv, 
-  VAL [ MOD < phrase & [HEAD adj] >,
+  VAL [ MOD < [ HEAD adj,
+		VAL [ SPR <>,
+		      COMPS <>,
+		      MOD <[]> ] ] >,
         SPR <>,
         COMPS <> ] ].
 
@@ -250,10 +257,10 @@ lexical-adv-adj := word &
 lexical-adj := word &
 [ HEAD adj & [ AGR [ NUM #agrnum,
 		             GEN #agrgen] ], 
-  VAL [ MOD < phrase & [ HEAD noun & 
-                            [AGR [ NUM #agrnum,
-				                   GEN #agrgen ] ],
-                         VAL [ SPR <[]>, COMPS <> ] ] >,
+  VAL [ MOD < [ HEAD noun & 
+                     [AGR [ NUM #agrnum,
+			    GEN #agrgen ] ],
+                      VAL [ SPR <[]>, COMPS <> ] ] >,
         SPR <>,
         COMPS <> ] ].
 
