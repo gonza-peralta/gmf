@@ -100,10 +100,10 @@ comprobante := noun-sg-ma &
 y := lexical-conj &
 [ ORTH "y"].
 
-frecuentemente := lexical-adv &
+frecuentemente := lexical-adv-verb &
 [ ORTH "frecuentemente"].
 
-recientemente := lexical-adv &
+recientemente := lexical-adv-adj &
 [ ORTH "recientemente"].
 
 importantes := lexical-adj-pl &

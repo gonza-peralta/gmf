@@ -2,34 +2,38 @@ S := phrase & [ HEAD verb,
                 VAL [ SPR <>, 
                       COMPS <> ] ].
 
+NP := phrase & [ HEAD noun, 
+                 VAL [ SPR <>, COMPS <> ] ].
+
 VP := phrase & [ HEAD verb, 
                  VAL [ SPR < [] >, 
                        COMPS <> ] ].
 
-V := [ HEAD verb ].
-
-NP := phrase & [ HEAD noun, 
-                 VAL [ SPR <>, COMPS <> ] ].
-
-N := [ HEAD noun, 
-       VAL [ SPR < [] > ] ].
+Nom := [ HEAD noun,
+         VAL [ SPR <[]>, COMPS <> ] ].
 
 NProp := [ HEAD noun,
            VAL [ SPR <> ] ].
 
-DET := [ HEAD det ].
+V := [ HEAD verb ].
+
+N := [ HEAD noun ].
 
 PP := phrase & [ HEAD prep, 
-                 VAL [ SPR <>, 
-                       COMPS <> ] ].
+                 VAL [ COMPS <> ] ].
+
+AP := phrase & [ HEAD adj,
+                 VAL [ COMPS <> ] ].
 
 P := [ HEAD prep ].
 
-Conj := [HEAD conj ].
+DET := [ HEAD det ].
 
-Adv := [ HEAD adv ].
+A := word & [ HEAD adj].
 
-Adj := [ HEAD adj ].
+Conj := word & [HEAD conj ].
+
+Adv := word & [ HEAD adv ].
 
 GAdv := phrase & [ HEAD adv,
                    VAL [ SPR <[]>,
