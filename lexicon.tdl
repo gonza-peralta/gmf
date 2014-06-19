@@ -86,7 +86,8 @@ audiencias := lexical-nomprop &
 sacerdotisas := noun-pl-fe &
 [ ORTH "sacerdotisas" ].
 
-sacrificios := lexical-nomprop &
+;;;sacrificios := lexical-nomprop &
+sacrificios := noun-pl-ma &
 [ ORTH "sacrificios"].
 
 dioses := noun-pl-ma &
@@ -108,7 +109,17 @@ mar := noun-sg-ma &
 [ ORTH "mar"].
 
 afirmación := noun-sg-fe &
-[ORTH "afirmación"].
+[ ORTH "afirmación"].
+
+personaje := noun-sg-ma &
+[ ORTH "personaje"].
+
+ópera := noun-sg-fe &
+[ ORTH "ópera"].
+
+acto := noun-sg-ma &
+[ ORTH "acto"].
+
 
 ;;; Pronombre
 ;;; =========
@@ -129,6 +140,12 @@ ganan := ditranspp-verb &
 
 entregado := passintransitive-verb-sg-ma &
 [ ORTH "entregado"].
+
+entregados := passintransitive-verb-pl-ma &
+[ ORTH "entregados"]. 
+
+entregadas := passintransitive-verb-pl-fe &
+[ ORTH "entregadas"].
 
 es := passbe-verb-sg &
 [ ORTH "es" ].
@@ -151,8 +168,14 @@ llegan := transitive-verb-pp-pl &
 interroga := ditranspp-pp-verb-sg &
 [ ORTH "interroga"].
 
-ofrecen := ditranspp-verb-nomprop-pl-fe &
+ofrecen := ditranspp-verb-nomprop-pl-ter &
 [ ORTH "ofrecen"].
+
+ofrecidos := passintransitive-verb-pp-pl-ma &
+[ ORTH "ofrecidos"].
+
+ofrecido := passintransitive-verb-pp-sg-ma &
+[ ORTH "ofrecido"].
 
 predicen := transitive-verb-np-pl &
 [ ORTH "predicen"].
@@ -162,6 +185,9 @@ navega := transitive-verb-pp-sg-ma &
 
 duda := transitive-verb-pp-sg-ma-ter &
 [ ORTH "duda"].
+
+muere := transitive-verb-pp-sg-ma &
+[ ORTH "muere"].
  
 ;;; Preposiciones
 ;;; =============
@@ -212,4 +238,9 @@ competente := lexical-adj-sg &
 
 principal := lexical-adj-sg &
 [ ORTH "principal"].
- 
+
+femenina := lexical-adj-sg-fe &
+[ ORTH "femenina"]. 
+
+terceras := lexical-adj-pl-fe &
+[ ORTH "terceras"].

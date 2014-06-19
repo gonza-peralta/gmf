@@ -82,6 +82,9 @@ phrase-pp := phrase &
  [ HEAD prep, 
    VAL [ SPR <>, COMPS <> ] ].
 
+phrase-adv := phrase &
+ [ HEAD adv,
+   VAL [ SPR <>, COMPS <> ] ].
 
 ;;; Lexical values
 ;;; ==============
@@ -231,8 +234,8 @@ ditranspp-verb-nomprop := lexical-verb &
 [ VAL [ COMPS < [ HEAD noun], phrase-pp > ] ].
 ditranspp-verb-nomprop-pl := ditranspp-verb-nomprop &
 [ HEAD.AGR.NUM pl]. 
-ditranspp-verb-nomprop-pl-fe := ditranspp-verb-nomprop-pl &
-[ HEAD.AGR.GEN fe].
+ditranspp-verb-nomprop-pl-ter := ditranspp-verb-nomprop-pl &
+[ HEAD.AGR.PER ter].
 
 
 ditranspp-pp-verb := lexical-verb &
@@ -261,9 +264,36 @@ passintransitive-verb-sg-ma := passintransitive-verb-sg &
 passintransitive-verb-sg-fe := passintransitive-verb-sg &
 [ HEAD.AGR.GEN fe].
 
+passintransitive-verb-pp := lexical-verb &
+[ VAL [ COMPS < phrase-pp, phrase-pp > ] ].
+passintransitive-verb-pp-pl := passintransitive-verb-pp &
+[ HEAD.AGR.NUM pl].
+passintransitive-verb-pp-pl-ma := passintransitive-verb-pp-pl &
+[ HEAD.AGR.GEN ma].
+passintransitive-verb-pp-sg := passintransitive-verb-pp &
+[ HEAD.AGR.NUM sg].
+passintransitive-verb-pp-sg-ma := passintransitive-verb-pp-sg &
+[ HEAD.AGR.GEN ma].
 
+
+
+;;;passbe-verb := word &
+;;;[ HEAD verb & [ AGR [ NUM #agrnum,
+;;;		      PER #agrper ] ],
+;;;  VAL [ SPR < [ HEAD noun & [ AGR [ NUM #agrnum,
+;;;				    PER #agrper ] ] ] >,
+;;;	COMPS < phrase-vp & [ HEAD verb & 
+;;;				[ AGR [ NUM #agrnum, 
+;;;					PER #agrper] ] ] >,
+;;;	MOD <> ] ].
+;;;
 passbe-verb := lexical-verb &
-[ VAL [ COMPS < phrase-vp > ] ].
+[ HEAD verb & [ AGR [ NUM #agrnum,
+		      PER #agrper ] ],
+  VAL [ COMPS < phrase-vp & [ HEAD verb & 
+				[ AGR [ NUM #agrnum, 
+					PER #agrper] ] ] > ] ].
+
 
 passbe-verb-pl := passbe-verb &
 [ HEAD.AGR.NUM pl].

@@ -35,3 +35,6 @@ Conj := word & [HEAD conj ].
 
 Adv := word & [ HEAD adv ].
 
+GAdv := phrase & [Head adv,
+		  VAL [COMPS <> ] ].
+
