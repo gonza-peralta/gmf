@@ -114,6 +114,10 @@ pl-ter-fe-det := lexical-det &
                PER ter,
                GEN fe ] ] ].
 
+sg-pri-fe-det := lexical-det &
+[ HEAD [ AGR [NUM sg,
+              PER pri,
+              GEN fe ] ] ]. 
 
 ;;; Lexical noun
 ;;; ============
@@ -122,16 +126,12 @@ lexical-noun := word &
                       GEN #agrgen] ],
   VAL [ SPR < [ HEAD det & [ AGR [ NUM #agrnum,
                                    GEN #agrgen] ] ] >,
-        COMPS <>,
-	MOD <> ] ].
+        MOD <> ] ].
 
-lexical-nomprop := word &
-[ HEAD noun,
-  VAL [ SPR <>,
-        COMPS <>,
-	MOD <> ] ].
+lexical-noun-sincomp := lexical-noun &
+[ VAL [ COMPS <>] ].
 
-noun-pl := lexical-noun &
+noun-pl := lexical-noun-sincomp &
 [ HEAD.AGR.NUM pl].
 
 noun-pl-ma := noun-pl &
@@ -139,12 +139,36 @@ noun-pl-ma := noun-pl &
 noun-pl-fe := noun-pl &
 [ HEAD.AGR.GEN fe].
 
-noun-sg := lexical-noun &
+noun-sg := lexical-noun-sincomp &
 [ HEAD.AGR.NUM sg].
 
 noun-sg-ma := noun-sg &
 [ HEAD.AGR.GEN ma].
 noun-sg-fe := noun-sg &
+[ HEAD.AGR.GEN fe].
+
+lexical-nomprop := word &
+[ HEAD noun,
+  VAL [ SPR <>,
+        COMPS <> ] ].
+
+pro-noun := word &
+[ HEAD noun,
+  VAL [ SPR <>,
+        COMPS <> ] ].
+pro-noun-sg-ter := pro-noun &
+[ HEAD.AGR.NUM sg ] &
+[ HEAD.AGR.PER ter ].
+
+lexical-noun-comp := lexical-noun &
+[ VAL [ COMPS <phrase-pp> ] ].
+
+noun-comp-sg := lexical-noun-comp &
+[ HEAD.AGR.NUM sg].
+
+noun-comp-sg-ma := noun-comp-sg &
+[ HEAD.AGR.GEN ma].
+noun-comp-sg-fe := noun-comp-sg &
 [ HEAD.AGR.GEN fe].
 
 ;;; Lexical verb
@@ -156,11 +180,32 @@ lexical-verb := word &
                                     PER #agrper ] ] ] >,
 	MOD <> ] ].
 
-transitive-verb := lexical-verb &
+transitive-verb-np := lexical-verb &
 [ VAL [ COMPS < phrase-np > ] ].
 
-transitive-verb-pl := transitive-verb &
+transitive-verb-np-pl := transitive-verb-np &
 [ HEAD.AGR.NUM pl].
+
+transitive-verb-np-sg := transitive-verb-np &
+[ HEAD.AGR.NUM sg].
+
+transitive-verb-pp := lexical-verb &
+[ VAL [ COMPS < phrase-pp > ] ].
+
+transitive-verb-pp-pl := transitive-verb-pp &
+[ HEAD.AGR.NUM pl].
+transitive-verb-pp-sg := transitive-verb-pp &
+[ HEAD.AGR.NUM sg].
+transitive-verb-pp-sg-ma := transitive-verb-pp-sg &
+[ HEAD.AGR.GEN ma].
+transitive-verb-pp-sg-ma-ter := transitive-verb-pp-sg-ma &
+[ HEAD.AGR.PER ter].
+
+;;;participio-verb-pp := lexical-verb &
+;;;[ VAL [ COMPS < phrase-pp > ] ].
+;;;participio-verb-pp-pl := participio-verb-pp &
+;;;[ HEAD.AGR.NUM pl].
+
 
 ditransnp-verb := lexical-verb &
 [ VAL [ COMPS < phrase-np, phrase-np > ] ].
@@ -182,6 +227,23 @@ ditranspp-verb-sg-ma := ditranspp-verb-sg &
 ditranspp-verb-sg-fe := ditranspp-verb-sg &
 [ HEAD.AGR.GEN fe].
 
+ditranspp-verb-nomprop := lexical-verb &
+[ VAL [ COMPS < [ HEAD noun], phrase-pp > ] ].
+ditranspp-verb-nomprop-pl := ditranspp-verb-nomprop &
+[ HEAD.AGR.NUM pl]. 
+ditranspp-verb-nomprop-pl-fe := ditranspp-verb-nomprop-pl &
+[ HEAD.AGR.GEN fe].
+
+
+ditranspp-pp-verb := lexical-verb &
+[ VAL [ COMPS < phrase-pp, phrase-pp > ] ].
+ditranspp-pp-verb-pl := ditranspp-pp-verb &
+[ HEAD.AGR.NUM pl].
+ditranspp-pp-verb-sg := ditranspp-pp-verb &
+[ HEAD.AGR.NUM sg].
+
+;;; Para voz pasiva
+;;; ===============
 passintransitive-verb := lexical-verb &
 [ VAL [ COMPS < phrase-pp > ] ].
 
@@ -222,8 +284,9 @@ passbe-verb-sg-fe := passbe-verb-sg &
 lexical-prep := word &
 [ HEAD prep,
   VAL [ SPR <>,
-        COMPS < phrase-np >,
-	MOD <> ] ].
+        COMPS < [ HEAD noun,
+                  VAL [ SPR <>, COMPS <> ] ] >,
+	    MOD <> ] ].
 
 ;;; Lexical conjunction
 ;;; ===================
@@ -245,10 +308,7 @@ lexical-adv-verb := word &
 
 lexical-adv-adj := word &
 [ HEAD adv, 
-  VAL [ MOD < [ HEAD adj,
-		VAL [ SPR <>,
-		      COMPS <>,
-		      MOD <[]> ] ] >,
+  VAL [ MOD < [ HEAD adj ] >,
         SPR <>,
         COMPS <> ] ].
 

@@ -1,13 +1,3 @@
-;;;head-complement-rule-0 := phrase &
-;;;[ HEAD #head,
-;;;  VAL [ SPR #spr,
-;;;        COMPS #comps,
-;;;        MOD #mod],
-;;;  ARGS < word & [HEAD #head,
-;;;                 VAL [ SPR #spr,
-;;;                       COMPS #comps,
-;;;                       MOD #mod] ] > ].
-
 head-specifier-rule := phrase &
 [ HEAD #head,
   VAL [ SPR < >,
@@ -43,98 +33,38 @@ head-complement-rule-2 := phrase &
                  MOD #mod ] ],
          #1, #2 >  ].
 
-;;;head-modifier-rule-1 := phrase &
-;;;[ HEAD #head,
-;;;  VAL [ SPR <#spr>,
-;;;        COMPS <> ],
-;;;  ARGS < word & 
-;;;         [ HEAD #head,
-;;;           VAL [ SPR <#spr>,
-;;;                 COMPS <> ] ],
-;;;         phrase-pp > ].
-;;;head-modifier-rule-1 := phrase &
-;;;[ HEAD #head,
-;;;  VAL [ SPR <#spr>,
-;;;        COMPS <>,
-;;;        MOD #mod ],
-;;;  ARGS < phrase & 
-;;;         [ HEAD #head,
-;;;           VAL [ SPR <#spr>,
-;;;                 COMPS <>,
-;;;                 MOD #mod ] ],
-;;;         phrase-pp > ].
-
-head-modifier-rule-2 := phrase &
+head-modifier-rule-1 := phrase &
 [ HEAD #head,
   VAL [ SPR <#spr>,
         COMPS <>,
         MOD #mod ],
+  ARGS < [ HEAD #head,
+           VAL [ SPR <#spr>,
+                 COMPS <>,
+                 MOD #mod ] ],
+         phrase-pp > ].
+
+head-modifier-rule-2 := phrase &
+[ HEAD #head,
+  VAL [ SPR #spr,
+        COMPS <>,
+        MOD #mod ],
   ARGS < #hmdr & 
          [ HEAD #head,
-           VAL [ SPR <#spr>,
+           VAL [ SPR #spr,
                  COMPS <>,
                  MOD #mod ] ],
          [ VAL [ COMPS <>,
            	 MOD <#hmdr> ] ] > ].
 
-;;;head-modifier-rule-adj := phrase &
-;;;[ HEAD #head,
-;;;  VAL [ SPR <#spr>,
-;;;        COMPS <> ],
-;;;  ARGS < expression &
-;;;          [ HEAD #head & [ AGR #agr],
-;;;            VAL [ SPR <#spr>,
-;;;                  COMPS <> ] ],
-;;;         expression & 
-;;;          [ HEAD adj,
-;;;	        VAL [MOD < expression & [ HEAD #head & 
-;;;					   [ AGR #agr ] ] > ] ] > ].
-;;;
-;;;head-modifier-rule-adv := phrase &
-;;;[ HEAD #head,
-;;;  VAL [ SPR #spr,
-;;;        COMPS #comps ],
-;;;  ARGS < expression &
-;;;          [ HEAD #head,
-;;;            VAL [ SPR #spr,
-;;;                  COMPS #comps ] ],
-;;;         expression & 
-;;;          [ HEAD adv,
-;;;	        VAL [ MOD < expression & [ HEAD #head ] > ] ] > ].
-;;;
-;;;head-modifier-rule-adv := phrase &
-;;;[ HEAD #head,
-;;;  VAL [ SPR #spr,
-;;;        COMPS #comps ],
-;;;  ARGS < expression & #hdtr &
-;;;         [ HEAD #head,
-;;;           VAL [ SPR #spr,
-;;;                 COMPS #comps ] ],
-;;;         expression &
-;;;	 [ HEAD adv,
-;;;	   VAL [ MOD < #hdtr > ] ] > ].
-;;;
-;;;head-conjunction-rule := phrase &
-;;;[ HEAD #head,
-;;;  VAL #val,
-;;;  ARGS < #phrase1 &
-;;;            [ HEAD #head & [ AGR #agr],
-;;;              VAL #val ],
-;;;         word & 
-;;;         [ HEAD conj,
-;;;           VAL [ SPR <>,
-;;;                 COMPS <#phrase1, #phrase2> ] ],
-;;;         #phrase2 & 
-;;;            [ HEAD #head & [ AGR #agr] ] > ].
-;;;            [  VAL #val ] > ].
 head-conjunction-rule := phrase &
 [ HEAD #head,
   VAL #val,
-  ARGS < [ HEAD #head & [ AGR #agr],
+  ARGS < [ HEAD #head & [ AGR #agr ],
            VAL #val ],
          word & 
          [ HEAD conj ],
          [ HEAD #head & [ AGR #agr],
-	   VAL #val ] > ].
+           VAL #val ] > ].
 
 

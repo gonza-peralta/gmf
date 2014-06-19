@@ -1,6 +1,28 @@
+;;; Determinantes
+;;; =============
 El := sg-ter-ma-det &
 [ ORTH "El" ].
 
+los := pl-ter-ma-det &
+[ ORTH "los" ].
+
+las := pl-ter-fe-det &
+[ ORTH "las" ]. 
+
+Esas := pl-ter-fe-det &
+[ ORTH "Esas"].
+
+su := sg-ter-ma-det &
+[ ORTH "su"].
+
+Ese := sg-ter-ma-det &
+[ ORTH "Ese"].
+
+mi := sg-pri-fe-det &
+[ORTH "mi"].
+
+;;; Sustantivos y Nombres propios
+;;; =============================
 estudiante := noun-sg &
 [ ORTH "estudiante" ].
 
@@ -16,19 +38,94 @@ gramática := lexical-nomprop &
 matemáticas := lexical-nomprop &
 [ ORTH "matemáticas"].
 
-;;;entrega := transitive-verb &
-;;;[ VAL [ COMPS < phrase-np >,
-;;;        MOD < phrase-pp > ],
-;;;  ORTH "entrega" ].
+libros := noun-pl-ma & 
+[ ORTH "libros" ].
+
+noche := noun-sg-fe &
+[ ORTH "noche" ].
+
+libro := noun-sg-ma &
+[ ORTH "libro"].
+
+conferencia := noun-sg-fe &
+[ ORTH "conferencia"].
+
+atletas := noun-pl-fe &
+[ ORTH "atletas"].
+
+carreras := noun-pl-fe &
+[ ORTH "carreras"].
+
+solvencia := lexical-nomprop &
+[ ORTH "solvencia"].
+
+estilo := lexical-nomprop &
+[ ORTH "estilo"].
+
+biblioteca := noun-sg-fe &
+[ ORTH "biblioteca" ].
+
+bibliotecaria := noun-sg-fe &
+[ ORTH "bibliotecaria" ].
+
+comprobante := noun-sg-ma &
+[ ORTH "comprobante"].
+
+jueza := noun-sg-fe &
+[ ORTH "jueza"].
+
+testigo := noun-sg-ma &
+[ ORTH "testigo"].
+
+sala := noun-comp-sg-fe &
+[ ORTH "sala"].
+
+audiencias := lexical-nomprop &
+[ ORTH "audiencias"].
+
+sacerdotisas := noun-pl-fe &
+[ ORTH "sacerdotisas" ].
+
+sacrificios := lexical-nomprop &
+[ ORTH "sacrificios"].
+
+dioses := noun-pl-ma &
+[ ORTH "dioses"].
+
+adivinas := noun-pl-fe &
+[ ORTH "adivinas"].
+
+futuro := noun-sg-ma &
+[ ORTH "futuro"].
+
+bote := noun-comp-sg-ma &
+[ ORTH "bote"].
+
+vela := lexical-nomprop &
+[ ORTH "vela"].
+
+mar := noun-sg-ma &
+[ ORTH "mar"].
+
+afirmación := noun-sg-fe &
+[ORTH "afirmación"].
+
+;;; Pronombre
+;;; =========
+Él := pro-noun-sg-ter &
+[ ORTH "Él"].
+
+
+;;; Verbos
+;;; ======
 entrega := ditranspp-verb-sg  &
 [ ORTH "entrega"].
 
-;;;retiran := transitive-verb &
-;;;[  VAL [ COMPS < phrase-np >,
-;;;         MOD < phrase-pp> ], 
-;;;   ORTH "retiran" ].
 retiran := ditranspp-verb &
 [ ORTH "retiran" ].
+
+ganan := ditranspp-verb &
+[ ORTH "ganan"].
 
 entregado := passintransitive-verb-sg-ma &
 [ ORTH "entregado"].
@@ -39,40 +136,35 @@ es := passbe-verb-sg &
 son := passbe-verb-pl &
 [ ORTH "son"].
 
-comparten := transitive-verb &
+comparten := transitive-verb-np-pl &
 [ ORTH "comparten"].
 
-invitados := transitive-verb-pl &
-[ ORTH "invitados"].
+;;;invitados := participio-verb-pp-pl &
+;;;[ ORTH "invitados"].
 
 compartidos := passintransitive-verb-pl-ma &
 [ ORTH "compartidos"].
 
-llegan := transitive-verb &
+llegan := transitive-verb-pp-pl &
 [ ORTH "llegan"].
 
-los := pl-ter-ma-det &
-[ ORTH "los" ].
+interroga := ditranspp-pp-verb-sg &
+[ ORTH "interroga"].
 
-las := pl-ter-fe-det &
-[ ORTH "las" ]. 
+ofrecen := ditranspp-verb-nomprop-pl-fe &
+[ ORTH "ofrecen"].
 
-libros := noun-pl-ma & 
-[ ORTH "libros" ].
+predicen := transitive-verb-np-pl &
+[ ORTH "predicen"].
 
-noche := noun-sg-fe &
-[ ORTH "noche" ].
+navega := transitive-verb-pp-sg-ma &
+[ ORTH "navega"].
 
-;;;libros := noun-pl-ma &
-;;;[ VAL [ MOD < phrase-pp >]
-;;;  ORTH "libros"].
-
-libro := noun-sg-ma &
-[ ORTH "libro"].
-
-conferencia := noun-sg-fe &
-[ ORTH "conferencia"].
-
+duda := transitive-verb-pp-sg-ma-ter &
+[ ORTH "duda"].
+ 
+;;; Preposiciones
+;;; =============
 a := lexical-prep &
 [ ORTH "a" ].
 
@@ -85,31 +177,39 @@ en := lexical-prep &
 de := lexical-prep &
 [ ORTH "de" ].
 
+con := lexical-prep &
+[ ORTH "con" ].
+
 la := sg-ter-fe-det &
 [ ORTH "la" ].
 
-biblioteca := noun-sg-fe &
-[ ORTH "biblioteca" ].
-
-bibliotecaria := noun-sg-fe &
-[ ORTH "bibliotecaria" ].
-
-comprobante := noun-sg-ma &
-[ ORTH "comprobante"].
-
+;;; Conjuncion
+;;; ==========
 y := lexical-conj &
 [ ORTH "y"].
 
+;;; Adverbios
+;;; =========
 frecuentemente := lexical-adv-verb &
 [ ORTH "frecuentemente"].
 
 recientemente := lexical-adv-adj &
 [ ORTH "recientemente"].
 
+;;; Adjetivos
+;;; =========
 importantes := lexical-adj-pl &
 [ ORTH "importantes"].
 
 perdido := lexical-adj-sg-ma &
 [ ORTH "perdido"].
 
+invitados := lexical-adj-pl-ma &
+[ ORTH "invitados"].
 
+competente := lexical-adj-sg &
+[ ORTH "competente"].
+
+principal := lexical-adj-sg &
+[ ORTH "principal"].
+ 
