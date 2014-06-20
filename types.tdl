@@ -204,11 +204,6 @@ transitive-verb-pp-sg-ma := transitive-verb-pp-sg &
 transitive-verb-pp-sg-ma-ter := transitive-verb-pp-sg-ma &
 [ HEAD.AGR.PER ter].
 
-;;;participio-verb-pp := lexical-verb &
-;;;[ VAL [ COMPS < phrase-pp > ] ].
-;;;participio-verb-pp-pl := participio-verb-pp &
-;;;[ HEAD.AGR.NUM pl].
-
 
 ditransnp-verb := lexical-verb &
 [ VAL [ COMPS < phrase-np, phrase-np > ] ].
@@ -351,10 +346,10 @@ lexical-adj := word &
                      [AGR [ NUM #agrnum,
 			    GEN #agrgen ] ],
                       VAL [ SPR <[]>, COMPS <> ] ] >,
-        SPR <>,
-        COMPS <> ] ].
+        SPR <> ] ].
 
 lexical-adj-pl := lexical-adj &
+[ VAL [ COMPS <> ] ] &
 [ HEAD.AGR.NUM pl].
 
 lexical-adj-pl-ma := lexical-adj-pl &
@@ -364,6 +359,7 @@ lexical-adj-pl-fe := lexical-adj-pl &
 [ HEAD.AGR.GEN fe].
 
 lexical-adj-sg := lexical-adj &
+[ VAL [ COMPS <> ] ] &
 [ HEAD.AGR.NUM sg].
 
 lexical-adj-sg-ma := lexical-adj-sg &
@@ -371,6 +367,13 @@ lexical-adj-sg-ma := lexical-adj-sg &
 
 lexical-adj-sg-fe := lexical-adj-sg &
 [ HEAD.AGR.GEN fe].
+
+
+;;;participio-verb-pp := lexical-adj &
+;;;[ VAL [ COMPS < phrase-pp > ] ].
+;;;
+;;;participio-verb-pp-pl := participio-verb-pp &
+;;;[ HEAD.AGR.NUM pl].
 
 
 ;; standard types
