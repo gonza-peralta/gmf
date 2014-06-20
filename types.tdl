@@ -67,8 +67,8 @@ val-cat := *top* &
 ;;; PHRASE DEFINITION
 ;;; =================
 phrase := expression &
- [ VAL [ COMPS <> ],
-   ARGS *list* ].
+ [ARGS *list* ].
+;;; [ VAL [ COMPS <> ],
 
 phrase-np := phrase & 
  [ HEAD noun,
@@ -326,8 +326,9 @@ lexical-conj := word &
 lexical-adv-verb := word &
 [ HEAD adv, 
   VAL [ MOD < [ HEAD verb,
-                VAL [ SPR <[]>,
-                      COMPS <> ] ] >,
+                VAL [ MOD <>,
+		      SPR <[]>,
+		      COMPS <[]> ] ]  >,
         SPR <>,
         COMPS <> ] ].
 
@@ -336,6 +337,16 @@ lexical-adv-adj := word &
   VAL [ MOD < [ HEAD adj ] >,
         SPR <>,
         COMPS <> ] ].
+
+;;; Agregado por el modificador "ya"
+;;; "ya" se vincula con invitados por la regla del modificador
+;;; Como "ya" es nucleo, la phrase resultante hereda la valencia
+;;; y ese este quien se vincula con el sustantivo "invitados"
+lexical-adv-noun := word &
+[ HEAD adv,
+  VAL [ MOD < [ HEAD noun ] >,
+	SPR <>,
+	COMPS <> ] ].
 
 ;;; Lexical adj
 ;;; ===========

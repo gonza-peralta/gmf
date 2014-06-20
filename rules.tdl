@@ -47,14 +47,15 @@ head-modifier-rule-1 := phrase &
 head-modifier-rule-2 := phrase &
 [ HEAD #head,
   VAL [ SPR #spr,
-        COMPS <>,
+        COMPS #comps,
         MOD #mod ],
   ARGS < #hmdr & 
          [ HEAD #head,
            VAL [ SPR #spr,
-                 COMPS <>,
+		 COMPS #comps,
                  MOD #mod ] ],
-         [ VAL [ COMPS <>,
+         [ VAL [ SPR <>,
+		 COMPS <>,
            	 MOD <#hmdr> ] ] > ].
 
 head-conjunction-rule := phrase &

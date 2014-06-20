@@ -226,7 +226,9 @@ frecuentemente := lexical-adv-verb &
 recientemente := lexical-adv-adj &
 [ ORTH "recientemente"].
 
-ya := lexical-adv-
+ya := lexical-adv-noun &
+[ ORTH "ya"].
+
 ;;; Adjetivos
 ;;; =========
 importantes := lexical-adj-pl &
